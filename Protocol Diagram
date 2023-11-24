@@ -1,31 +1,31 @@
 title Server-Client
 
-Client->Server: DIR <filepath>
+Client->Server: DIR(<filepath>)
 note over Server, Client: Client sends Dir command and file path
-Server->Client: <content of folder>
+Server->Client: DIR(<content of folder>)
 note over Server, Client: Server sends the content of the requested folder
 
-Client->Server: DELETE <filepath>
+Client->Server: DELETE(<filepath>)
 note over Server, Client: Client sends DELETE command and file path
-Server->Client: File <filepath> was deleted
+Server->Client: DELETE(File <filepath> was deleted)
 note over Server, Client: Server sends the client a deleted file message
 
-Client->Server: COPY <filepath_source> <filepath_destination>
+Client->Server: COPY(<filepath_source>) <filepath_destination>
 note over Server, Client: Client sends Copy command and two file paths
-Server->Client: File <filepath_source> was copied to <filepath_destination>
+Server->Client: COPY(File <filepath_source> was copied to <filepath_destination>)
 note over Server, Client: Server sends the client a copied file message
 
-Client->Server: EXECUTE <filepath>
+Client->Server: EXECUTE(<filepath>)
 note over Server, Client: Client sends Execute command and file path
-Server->Client: Program <filepath> has been executed
+Server->Client: EXECUTE(Program <filepath> has been executed)
 note over Server, Client: Server sends the client a program executed message
 
-Client->Server: TAKE SCREENSHOT
+Client->Server: TAKE_SCREENSHOT()
 note over Server, Client: Client sends Take Screenshot command
-Server->Client: Screenshot
+Server->Client: TAKE_SCREENSHOT(Screenshot)
 note over Server, Client: Server sends the taken screenshot
 
 Client->Server: EXIT
 note over Server, Client: Client sends Exit command
-Server->Client: Client had disconnected
+Server->Client: EXIT(Client had disconnected)
 note over Server, Client: Server sends disconnected message and disconnects the client

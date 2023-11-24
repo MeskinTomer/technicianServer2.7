@@ -6,24 +6,10 @@ Description:
 
 import socket
 import logging
+from protocol import *
+from client_functions import *
 
 logging.basicConfig(filename='technicianClient_log.log', level=logging.DEBUG)
-
-
-def protocol_send(message):
-    message_len = len(message)
-    final_message = str(message_len) + '!' + message
-    return final_message
-
-
-def protocol_receive(my_socket):
-    cur_char = ''
-    message_len = ''
-    while cur_char != '!':
-        cur_char = my_socket.recv(1).decode()
-        message_len += cur_char
-    message_len = message_len[:-1]
-    return my_socket.recv(int(message_len)).decode()
 
 
 def main():
