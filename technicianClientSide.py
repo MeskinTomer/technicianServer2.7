@@ -30,15 +30,27 @@ def command(com):
 
 
 def reshape_file_path(path):
+    """
+    forms the file path, so it could be sent to the server
+    :param path: The path needed to be shaped
+    :type: string
+    :return: the path reshaped
+    """
     return path.replace('\\', '/')
 
 
 def save_image(image_str):
+    """
+    saves an image to the folder
+    :param image_str: The string containing the image
+    :type: string
+    :return: None
+    """
     try:
         decoded_image = base64.b64decode(image_str)
 
         image = Image.open(BytesIO(decoded_image))
-        image.save('received_image', 'jpeg')
+        image.save('received_image.jpg', 'jpeg')
         image.show()
     except binascii.Error as err:
         logging.error('Error while trying to decode image')
@@ -66,16 +78,21 @@ def main():
                 my_socket.send(protocol_send(com, payload))
                 logging.debug('The command ' + com + ' has been sent to the server')
                 response = protocol_recv(my_socket)
-                if response[0] != 'TAKE_SCREENSHOT':
+                if response[0] != 'TAKE_SCREENSHOT' and response[0] != 'DIR':
                     print('Received the command: ' + response[0] + ' and the response: ' + response[1])
                     logging.debug('Received the command: ' + response[0] + ' and the response: ' + response[1])
+                elif response[0] == 'DIR':
+                    print('Received the command: ' + response[0] + ' and the response:')
+                    li = response[1].split(", ")
+                    for file in li:
+                        logging.debug(file)
+                        print(file)
                 else:
                     print('Received the command: ' + response[0])
                     logging.debug('Received the command: ' + response[0])
-                if response[0] == 'TAKE_SCREENSHOT':
                     logging.debug('Attempting to save received image')
                     save_image(response[1])
-                elif response[0] == 'You were disconnected':
+                if response[0] == 'You were disconnected':
                     logging.debug('The server has disconnected the client')
                     break
             else:

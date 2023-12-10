@@ -8,7 +8,6 @@ import socket
 import logging
 from server_functions import *
 from protocol import *
-logging.basicConfig(filename='technicianServer_log.log', level=logging.DEBUG)
 
 QUEUE_LEN = 1
 
@@ -43,12 +42,19 @@ def main():
                         response = take_screenshot()
                     elif com == 'EXIT':
                         client_socket.send(protocol_send('You were disconnected', ''))
+                        print('The client has been disconnected')
                         break
                     else:
                         response = 'Invalid command'
                     client_socket.send(protocol_send(com, response))
-                    if com != 'TAKE_SCREENSHOT':
+                    if com != 'TAKE_SCREENSHOT' and com != 'DIR':
                         logging.debug('The message ' + com + ' + ' + response + ' has been sent')
+                    elif com == 'DIR':
+                        logging.debug('The message ' + com + ' and the response:')
+                        li = response.split(", ")
+                        for file in li:
+                            logging.debug(file)
+                            print(file)
                     else:
                         logging.debug('The message ' + com + ' + {screenshot} has been sent')
             except socket.error as err:

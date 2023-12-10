@@ -1,12 +1,12 @@
 DEBUG:root:The command DIR has been sent to the server
-DEBUG:root:Received the command: DIR and the response: C:/Users/tomer/Desktop/Hangman/asd.txt, C:/Users/tomer/Desktop/Hangman/Exercise1.txt
+DEBUG:root:C:/Users/tomer/Desktop/Hangman/asd.txt
+DEBUG:root:C:/Users/tomer/Desktop/Hangman/Exercise1.txt
 DEBUG:root:The command COPY has been sent to the server
 DEBUG:root:Received the command: COPY and the response: File was copied successfully
+DEBUG:root:The command DELETE has been sent to the server
+DEBUG:root:Received the command: DELETE and the response: File was Deleted successfully
 DEBUG:root:The command EXECUTE has been sent to the server
 DEBUG:root:Received the command: EXECUTE and the response: Program was executed successfully
-DEBUG:root:Invalid command has attempted to be sent
-DEBUG:root:The command DELETE has been sent to the server
-DEBUG:root:Received the command: DELETE and the response: 
 DEBUG:root:The command TAKE_SCREENSHOT has been sent to the server
 DEBUG:root:Received the command: TAKE_SCREENSHOT
 DEBUG:root:Attempting to save received image
