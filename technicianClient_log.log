@@ -1,0 +1,44 @@
+DEBUG:root:The command TAKE_SCREENSHOT has been sent to the server
+DEBUG:root:The command TAKE_SCREENSHOT has been sent to the server
+DEBUG:root:The command TAKE_SCREENSHOT has been sent to the server
+DEBUG:root:Invalid command has attempted to be sent
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The command TAKE_SCREENSHOT has been sent to the server
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response DIR + C:\ has been received
+DEBUG:root:The command TAKE_SCREENSHOT has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:Invalid command has attempted to be sent
+DEBUG:root:The command DELETE has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response DIR + C:\ has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response DIR + C:/ has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response Error +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response DIR +  has been received
+DEBUG:root:The command DIR has been sent to the server
+DEBUG:root:The response DIR + C:/Users/tomer/Desktop/Hangman/asd.txt, C:/Users/tomer/Desktop/Hangman/Exercise1.txt has been received
+DEBUG:root:The command DELETE has been sent to the server
+DEBUG:root:The response DELETE +  has been received
+DEBUG:root:The command EXECUTE has been sent to the server
+DEBUG:root:The response EXECUTE + Program was executed successfully has been received
+DEBUG:root:The command COPY has been sent to the server
+DEBUG:root:The response COPY + File was copied successfully has been received
+DEBUG:root:The command EXIT has been sent to the server
+DEBUG:root:The command EXIT has been sent to the server
+DEBUG:root:The response You were disconnected +  has been received
