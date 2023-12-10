@@ -32,7 +32,7 @@ def main():
                     if com == 'DIR':
                         response = dir_file(payload)
                     elif com == 'DELETE':
-                        del_file(payload)
+                        response = del_file(payload)
                     elif com == 'COPY':
                         path1 = payload.split('|')[0]
                         path2 = payload.split('|')[1]
@@ -47,7 +47,10 @@ def main():
                     else:
                         response = 'Invalid command'
                     client_socket.send(protocol_send(com, response))
-                    logging.debug('The message ' + com + ' + ' + response + ' has been sent')
+                    if com != 'TAKE_SCREENSHOT':
+                        logging.debug('The message ' + com + ' + ' + response + ' has been sent')
+                    else:
+                        logging.debug('The message ' + com + ' + {screenshot} has been sent')
             except socket.error as err:
                 print('received socket error on client socket' + str(err))
             finally:

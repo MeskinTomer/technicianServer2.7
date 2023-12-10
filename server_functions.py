@@ -66,11 +66,11 @@ def open_program(program_path):
 def take_screenshot():
     try:
         ImageGrab.grab(all_screens=True).save('screenshot.jpg')
-        with open('screen.jpg', 'rb') as img:
+        with open('screenshot.jpg', 'rb') as img:
             ret_val = base64.b64encode(img.read()).decode('utf-8')
         os.remove('screenshot.jpg')
         logging.debug('Screenshot command was executed successfully')
     except OSError as err:
         ret_val = ''
-        logging.error('Screenshot command has crashed')
+        logging.error('Screenshot command has crashed', err)
     return ret_val

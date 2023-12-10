@@ -38,7 +38,7 @@ def save_image(image_str):
         decoded_image = base64.b64decode(image_str)
 
         image = Image.open(BytesIO(decoded_image))
-        image.save('received_image')
+        image.save('received_image', 'jpeg')
         image.show()
     except binascii.Error as err:
         logging.error('Error while trying to decode image')
@@ -49,6 +49,7 @@ def main():
     my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         my_socket.connect(('127.0.0.1', 1729))
+        print("Available commands are:\n" + ', '.join(COMMANDS))
         while True:
             com = input("Enter the desired command")
             com = command(com)
@@ -65,9 +66,16 @@ def main():
                 my_socket.send(protocol_send(com, payload))
                 logging.debug('The command ' + com + ' has been sent to the server')
                 response = protocol_recv(my_socket)
-                logging.debug('The response ' + response[0] + ' + ' + response[1] + ' has been received')
-                print('Received ' + response[0] + ' + ' + response[1])
-                if response == 'You were disconnected':
+                if response[0] != 'TAKE_SCREENSHOT':
+                    print('Received the command: ' + response[0] + ' and the response: ' + response[1])
+                    logging.debug('Received the command: ' + response[0] + ' and the response: ' + response[1])
+                else:
+                    print('Received the command: ' + response[0])
+                    logging.debug('Received the command: ' + response[0])
+                if response[0] == 'TAKE_SCREENSHOT':
+                    logging.debug('Attempting to save received image')
+                    save_image(response[1])
+                elif response[0] == 'You were disconnected':
                     logging.debug('The server has disconnected the client')
                     break
             else:

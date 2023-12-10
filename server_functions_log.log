@@ -1,0 +1,18 @@
+DEBUG:root:A client has connected to the server || address: 127.0.0.149955
+DEBUG:root:The command DIR has been received
+DEBUG:root:Dir command was executed successfully
+DEBUG:root:The message DIR + C:/Users/tomer/Desktop/Hangman/asd.txt, C:/Users/tomer/Desktop/Hangman/Exercise1.txt has been sent
+DEBUG:root:The command COPY has been received
+DEBUG:root:Copy command was executed successfully
+DEBUG:root:The message COPY + File was copied successfully has been sent
+DEBUG:root:The command EXECUTE has been received
+DEBUG:root:Open command was executed successfully
+DEBUG:root:The message EXECUTE + Program was executed successfully has been sent
+DEBUG:root:The command DELETE has been received
+DEBUG:root:Del command was executed successfully
+DEBUG:root:The message DELETE +  has been sent
+DEBUG:root:The command TAKE_SCREENSHOT has been received
+DEBUG:root:Screenshot command was executed successfully
+DEBUG:root:The message TAKE_SCREENSHOT + {screenshot} has been sent
+DEBUG:root:The command EXIT has been received
+DEBUG:root:The client has been disconnected
