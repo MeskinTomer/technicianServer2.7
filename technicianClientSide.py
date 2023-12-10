@@ -4,7 +4,6 @@ Date: 16/11/2023
 Description:
 """
 
-import socket
 import logging
 import base64
 import binascii
@@ -52,7 +51,7 @@ def save_image(image_str):
         image = Image.open(BytesIO(decoded_image))
         image.save('received_image.jpg', 'jpeg')
         image.show()
-    except binascii.Error as err:
+    except binascii.Error:
         logging.error('Error while trying to decode image')
         print('Error decoding image')
 

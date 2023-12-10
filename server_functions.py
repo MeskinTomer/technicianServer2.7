@@ -84,10 +84,10 @@ def open_program(program_path):
     try:
         subprocess.call(program_path)
         logging.debug('Open command was executed successfully')
-    except OSError as err:
+    except OSError:
         success = 'Error'
         logging.error('Open command has crashed')
-    except subprocess.CalledProcessError as err:
+    except subprocess.CalledProcessError:
         success = 'Error'
         logging.error('Open command has crashed')
     return success

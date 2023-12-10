@@ -4,8 +4,6 @@ Date: 16/11/2023
 Description:
 """
 
-import socket
-import logging
 from server_functions import *
 from protocol import *
 
@@ -41,7 +39,7 @@ def main():
                     elif com == 'TAKE_SCREENSHOT':
                         response = take_screenshot()
                     elif com == 'EXIT':
-                        client_socket.send(protocol_send('You were disconnected', ''))
+                        client_socket.send(protocol_send('You were disconnected', response))
                         print('The client has been disconnected')
                         break
                     else:
